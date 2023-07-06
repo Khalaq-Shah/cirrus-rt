@@ -1,3 +1,6 @@
 [submodule "third-party/nvrhi"]
 	path = third-party/nvrhi
 	url = https://github.com/NVIDIAGameWorks/nvrhi.git
+[submodule "third-party/donut"]
+	path = third-party/donut
+	url = https://github.com/NVIDIAGameWorks/donut.git

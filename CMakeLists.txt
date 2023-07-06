@@ -11,7 +11,7 @@ link_directories(third-party/glfw/lib-vc2022/)
 
 # Adding third-party/nvrhi as subdirectory to build nvrhi along with CirrusRT
 set(NVRHI_WITH_VULKAN ON)
-add_subdirectory(third-party/nvrhi)
+add_subdirectory(third-party/donut)
 
 # Source Files glob for LibCirrusRT
 file(GLOB source_files src/*)
@@ -21,8 +21,7 @@ target_include_directories(Lib${PROJECT_NAME} PUBLIC ./include/)
 target_include_directories(Lib${PROJECT_NAME} PUBLIC ./third-party/)
 target_include_directories(Lib${PROJECT_NAME} PUBLIC ./third-party/glfw/include/)
 target_include_directories(Lib${PROJECT_NAME} PUBLIC ./third-party/assimp/include/)
-target_include_directories(Lib${PROJECT_NAME} PUBLIC ./third-party/nvrhi/include/)
-target_include_directories(Lib${PROJECT_NAME} PUBLIC ./third-party/nvrhi/thirdparty/Vulkan-Headers/include/)
+target_include_directories(Lib${PROJECT_NAME} PUBLIC ./third-party/donut/include/)
 
 # Adding CirrusRT.exe executable
 add_executable(${PROJECT_NAME} src/main.cpp)
