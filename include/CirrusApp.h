@@ -1,5 +1,4 @@
 #pragma once
-#include <Window.h>
 #include <donut/app/ApplicationBase.h>
 
 class CirrusApp
@@ -9,5 +8,5 @@ public:
     ~CirrusApp();
     void Run();
 private:
-    Window wnd;
+    donut::app::DeviceManager* deviceManager;
 };
