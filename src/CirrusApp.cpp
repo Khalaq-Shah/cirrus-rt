@@ -1,5 +1,6 @@
 #include <CirrusApp.h>
 #include <CirrusValidation.h>
+#include <BasicTriangle.h>
 
 using namespace donut;
 
@@ -28,5 +29,13 @@ CirrusApp::~CirrusApp()
 
 void CirrusApp::Run()
 {
-    deviceManager->RunMessageLoop();
+    {
+        BasicTriangle example(deviceManager);
+        if (example.Init())
+        {
+            deviceManager->AddRenderPassToBack(&example);
+            deviceManager->RunMessageLoop();
+            deviceManager->RemoveRenderPass(&example);
+        }
+    }
 }
