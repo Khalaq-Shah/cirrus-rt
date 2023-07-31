@@ -1,5 +1,4 @@
 #pragma once
-#include <openvdb/openvdb.h>
 
 class Volume
 {

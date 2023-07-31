@@ -1,10 +1,10 @@
 #include <CirrusApp.h>
-#include <CirrusValidation.h>
 #include <BasicTriangle.h>
+#include <CirrusValidation.h>
 
 using namespace donut;
 
-CirrusApp::CirrusApp(unsigned int width, unsigned int height, std::string name)
+CirrusApp::CirrusApp(unsigned int width, unsigned int height, std::string name): volume("assets/bunny_cloud.vdb")
 {
     nvrhi::GraphicsAPI api = nvrhi::GraphicsAPI::D3D12;
     deviceManager = app::DeviceManager::Create(api);

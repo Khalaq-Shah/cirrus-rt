@@ -1,5 +1,6 @@
 #pragma once
 #include <donut/app/ApplicationBase.h>
+#include <Volume.h>
 
 class CirrusApp
 {
@@ -9,4 +10,5 @@ public:
     void Run();
 private:
     donut::app::DeviceManager* deviceManager;
+    Volume volume;
 };

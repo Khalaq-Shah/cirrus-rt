@@ -30,18 +30,3 @@ target_link_libraries(${PROJECT_NAME} donut_core donut_engine donut_app assimp-v
 configure_file(third-party/assimp/assimp-vc143-mt.dll ${CMAKE_CURRENT_BINARY_DIR}/assimp-vc143-mt.dll COPYONLY)
 # Setting CirrusRT.exe's runtime output directory to CMake's current binary directory
 set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
-
-set(DONUT_SHADERS_OUTPUT_DIR ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
-set(folder "shader")
-
-include(third-party/donut/compileshaders.cmake)
-file(GLOB shader "*.hlsl")
-
-donut_compile_shaders_all_platforms(
-    TARGET ${PROJECT_NAME}_shader
-    CONFIG ${CMAKE_CURRENT_SOURCE_DIR}/shader/shader.cfg
-    FOLDER ${folder}
-    OUTPUT_BASE ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/shader
-)
-
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ${folder})

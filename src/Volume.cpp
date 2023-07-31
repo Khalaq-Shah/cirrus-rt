@@ -1,7 +1,8 @@
 #include <Volume.h>
+#include <CirrusValidation.h>
 
 Volume::Volume(const char *path)
 {
-    openvdb::initialize();
-    openvdb::io::File file(path);
+    CirrusValidation::logi("Volume: Ctor called.");
+
 }
